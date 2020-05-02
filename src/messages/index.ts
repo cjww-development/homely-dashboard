@@ -22,7 +22,8 @@ const Messages = () => {
     resources: {
       en: {
         translation: {
-          'homely-punchline-1': 'You\'re always home',
+          'pages_welcome_punchline': 'You\'re always home',
+          'pages_welcome_start': 'Lets get started'
         }
       }
     },
