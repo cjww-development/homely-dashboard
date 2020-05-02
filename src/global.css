@@ -14,18 +14,17 @@
  * limitations under the License.
  */
 
-import Welcome from './pages/onboarding/Welcome'
-import Location from './pages/onboarding/Location'
-import React from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
-
-const App: React.FC = () => {
-  return (
-    <Router>
-      <Route path="/setup/welcome" exact component={Welcome} />
-      <Route path="/setup/location" exact component={Location} />
-    </Router>
-  )
+body {
+  margin: 0;
 }
 
-export default App
+@font-face {
+  font-family: 'GochiHand';
+  src: url('./fonts/GochiHand/GochiHand-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}

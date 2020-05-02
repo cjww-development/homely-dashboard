@@ -29,7 +29,8 @@ const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center; 
-  overflow-x: hidden;  
+  overflow-x: hidden;
+  margin: 0;  
 `
 
 const CenterDiv = styled.div`
@@ -82,8 +83,8 @@ const Welcome: React.FC = (props: ComponentProps<any>) => {
         <HomelyLogo>
           <img src={Logo} height="100%" alt=""/>
         </HomelyLogo>
-        <Punchline>{t('homely-punchline-1')}</Punchline>
-        <GetStarted onClick={next}>Lets get started</GetStarted>
+        <Punchline>{t('pages_welcome_punchline')}</Punchline>
+        <GetStarted onClick={next}>{t('pages_welcome_start')}</GetStarted>
       </CenterDiv>
     </Background>
   )

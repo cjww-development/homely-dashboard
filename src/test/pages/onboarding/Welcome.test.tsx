@@ -14,18 +14,16 @@
  * limitations under the License.
  */
 
-import Welcome from './pages/onboarding/Welcome'
-import Location from './pages/onboarding/Location'
 import React from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import { render } from '@testing-library/react'
+import Welcome from '../../../pages/onboarding/Welcome'
 
-const App: React.FC = () => {
-  return (
-    <Router>
-      <Route path="/setup/welcome" exact component={Welcome} />
-      <Route path="/setup/location" exact component={Location} />
-    </Router>
-  )
-}
+test('Render welcome page', () => {
+  const { getByText } = render(<Welcome/>)
 
-export default App
+  const punchLine = getByText(/You're always home/i)
+  expect(punchLine).toBeDefined()
+
+  const startButton = getByText(/Lets get started/i)
+  expect(startButton).toBeDefined()
+})
