@@ -25,6 +25,6 @@ jobs:
         run: |
           yarn build
 
-      - name: Run unit test
+      - name: Run unit tests
         run: |
           yarn test:unit

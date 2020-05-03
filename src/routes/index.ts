@@ -14,22 +14,11 @@
  * limitations under the License.
  */
 
-body {
-  margin: 0;
+const onboardingPrefix = '/welcome'
+
+const routesIndex = {
+  welcome: `${onboardingPrefix}`,
+  homelyInfo: `${onboardingPrefix}/homely`
 }
 
-@font-face {
-  font-family: 'GochiHand';
-  src: url('./fonts/GochiHand/GochiHand-Regular.ttf') format('truetype');
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Roboto';
-  src: url('./fonts/Roboto/Roboto-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Roboto Light';
-  src: url('./fonts/Roboto/Roboto-Light.ttf') format('truetype');
-}
+export default routesIndex

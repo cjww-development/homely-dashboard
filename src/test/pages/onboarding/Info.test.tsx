@@ -15,15 +15,18 @@
  */
 
 import React from 'react'
+import { render } from '@testing-library/react'
+import Info from '../../../pages/onboarding/Info'
 
-const Location: React.FC = () => {
-  return (
-    <div>
-      <p>Hello world</p>
-      <p>Hello world</p>
-      <p>Hello world</p>
-    </div>
-  )
-}
+test('Render info page', () => {
+  const { getByText } = render(<Info/>)
 
-export default Location
+  const titleOne = getByText(/Welcome to homely/i)
+  expect(titleOne).toBeDefined()
+
+  const titleTwo = getByText(/What can Homely do?/i)
+  expect(titleTwo).toBeDefined()
+
+  const titleThree = getByText(/Ready to join Homely?/i)
+  expect(titleThree).toBeDefined()
+})

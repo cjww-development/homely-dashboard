@@ -15,15 +15,19 @@
  */
 
 import Welcome from './pages/onboarding/Welcome'
-import Location from './pages/onboarding/Location'
+import Info from './pages/onboarding/Info'
 import React from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom'
+import routesIndex from './routes'
 
 const App: React.FC = () => {
   return (
     <Router>
-      <Route path="/setup/welcome" exact component={Welcome} />
-      <Route path="/setup/location" exact component={Location} />
+      <Route exact path="/">
+        <Redirect to={routesIndex.welcome}/>
+      </Route>
+      <Route path={routesIndex.welcome} exact component={Welcome} />
+      <Route path={routesIndex.homelyInfo} exact component={Info} />
     </Router>
   )
 }

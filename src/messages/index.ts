@@ -23,7 +23,7 @@ const Messages = () => {
       en: {
         translation: {
           'pages_welcome_punchline': 'You\'re always home',
-          'pages_welcome_start': 'Lets get started'
+          'pages_welcome_start': 'What\'s Homely?'
         }
       }
     },

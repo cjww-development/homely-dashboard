@@ -19,6 +19,7 @@ import styled from 'styled-components'
 import Logo from '../../assets/homely_logo.png'
 import {useTranslation} from 'react-i18next'
 import {Localisation} from '../../messages'
+import routesIndex from '../../routes'
 
 Localisation()
 
@@ -74,7 +75,7 @@ const Welcome: React.FC = (props: ComponentProps<any>) => {
   const { history } = props
 
   const next = () => {
-    history.push('/setup/location')
+    history.push(routesIndex.homelyInfo)
   }
 
   return (

@@ -24,6 +24,6 @@ test('Render welcome page', () => {
   const punchLine = getByText(/You're always home/i)
   expect(punchLine).toBeDefined()
 
-  const startButton = getByText(/Lets get started/i)
+  const startButton = getByText(/What's Homely?/i)
   expect(startButton).toBeDefined()
 })
