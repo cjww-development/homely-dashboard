@@ -23,7 +23,16 @@ const Messages = () => {
       en: {
         translation: {
           'pages_welcome_punchline': 'You\'re always home',
-          'pages_welcome_start': 'What\'s Homely?'
+          'pages_welcome_start': 'What\'s Homely?',
+
+          'pages_welcome_info_welcome': 'Welcome to Homely',
+          'pages_welcome_info_welcome_content_1': 'Fold your smart home into one easy to use remote. Control all of your smart bulbs, thermostats, media centers in one place from anywhere.',
+          'pages_welcome_info_welcome_content_2': 'With Homely you\'re always home.',
+          'pages_welcome_info_features': 'What can Homely do?',
+          'pages_welcome_info_features_content': 'As the team releases more and more features we want to flip this question around; what can\'t Homely do? But at the moment you\'ll be able to control your smart lights.',
+          'pages_welcome_info_join': 'Ready to join Homely?',
+          'pages_welcome_info_join_content': 'Has the thought of being able to control your home with Homely piqued your interest? Click the lets get started button below and we\'ll get you setup.',
+          'pages_welcome_info_getStarted': 'Lets get started',
         }
       }
     },

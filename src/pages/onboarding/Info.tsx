@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import React, {ComponentProps} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import {useTranslation} from 'react-i18next'
 import {Localisation} from '../../messages'
@@ -94,10 +94,8 @@ const GetStarted = styled.button`
 
 
 
-const Info: React.FC = (props: ComponentProps<any>) => {
+const Info: React.FC = () => {
   const { t } = useTranslation()
-
-  const { history } = props
 
   return (
     <Background>
@@ -110,16 +108,16 @@ const Info: React.FC = (props: ComponentProps<any>) => {
           <img src={homes} width="100%" alt=""/>
         </ImageBox>
         <ContentBox>
-          <ContentTitle>Welcome to homely</ContentTitle>
-          <ContentCaption>Fold your smart home into one easy to use remote. Control all of your smart bulbs, thermostats, media centers in one place from anywhere.</ContentCaption>
-          <ContentCaption>With Homely you're always home.</ContentCaption>
+          <ContentTitle>{t('pages_welcome_info_welcome')}</ContentTitle>
+          <ContentCaption>{t('pages_welcome_info_welcome_content_1')}</ContentCaption>
+          <ContentCaption>{t('pages_welcome_info_welcome_content_1')}</ContentCaption>
         </ContentBox>
       </ContentRow>
 
       <ContentRow>
         <ContentBox>
-          <ContentTitle>What can Homely do?</ContentTitle>
-          <ContentCaption>As the team releases more and more features we want to flip this question around; what can't Homely do? But at the moment you'll be able to control your smart lights.</ContentCaption>
+          <ContentTitle>{t('pages_welcome_info_features')}</ContentTitle>
+          <ContentCaption>{t('pages_welcome_info_features_content')}</ContentCaption>
         </ContentBox>
         <ImageBox>
           <img src={features} width="100%" alt=""/>
@@ -131,14 +129,14 @@ const Info: React.FC = (props: ComponentProps<any>) => {
           <img src={joining} width="100%" alt=""/>
         </ImageBox>
         <ContentBox>
-          <ContentTitle>Ready to join Homely?</ContentTitle>
-          <ContentCaption>Has the thought of being able to control your home with Homely piqued your interest? Click the lets get started button below and we'll get you setup.</ContentCaption>
+          <ContentTitle>{t('pages_welcome_info_join')}</ContentTitle>
+          <ContentCaption>{t('pages_welcome_info_join_content')}</ContentCaption>
         </ContentBox>
       </ContentRow>
 
       <ContentRow>
         <CenteringBox>
-          <GetStarted>Lets get started</GetStarted>
+          <GetStarted>{t('pages_welcome_info_getStarted')}</GetStarted>
         </CenteringBox>
       </ContentRow>
     </Background>
