@@ -14,15 +14,6 @@
  * limitations under the License.
  */
 
-const basePrefix = '/homely'
-
-const onboardingPrefix = '/welcome'
-
-const routesIndex = {
-  welcome: `${basePrefix}${onboardingPrefix}`,
-  homelyInfo: `${basePrefix}${onboardingPrefix}/what-is-homely`,
-  signUp: `${basePrefix}${onboardingPrefix}/sign-up`,
-  confirmAccount: `${basePrefix}${onboardingPrefix}/confirm-account`
-}
-
-export default routesIndex
+export const SET_REG_EMAIL = 'SET_REG_EMAIL'
+export const SET_REG_NAME = 'SET_REG_NAME'
+export const SET_VERIFICATION_INFO = 'SET_VERIFICATION_INFO'

@@ -17,6 +17,7 @@
 import Welcome from './pages/onboarding/Welcome'
 import Info from './pages/onboarding/Info'
 import SignUp from './pages/onboarding/SignUp'
+import ConfirmAccount from './pages/onboarding/ConfirmAccount'
 import React from 'react'
 import {Localisation} from './messages'
 import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom'
@@ -42,6 +43,7 @@ const App: React.FC = () => {
       <Route path={routesIndex.welcome} exact component={Welcome} />
       <Route path={routesIndex.homelyInfo} exact component={Info} />
       <Route path={routesIndex.signUp} exact component={SignUp}/>
+      <Route path={routesIndex.confirmAccount} exact component={ConfirmAccount} />
     </Router>
   )
 }

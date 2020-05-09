@@ -14,15 +14,23 @@
  * limitations under the License.
  */
 
-const basePrefix = '/homely'
+import {combineReducers} from 'redux'
+import {SET_VERIFICATION_INFO} from '../actions'
 
-const onboardingPrefix = '/welcome'
+const initialState = { data: { email: '', name: '' } }
 
-const routesIndex = {
-  welcome: `${basePrefix}${onboardingPrefix}`,
-  homelyInfo: `${basePrefix}${onboardingPrefix}/what-is-homely`,
-  signUp: `${basePrefix}${onboardingPrefix}/sign-up`,
-  confirmAccount: `${basePrefix}${onboardingPrefix}/confirm-account`
+export const registrationReducer = (state = initialState, action: { type: string, data: { email: string, name: string } }) => {
+  switch (action.type) {
+    case SET_VERIFICATION_INFO:
+      return { ...state, data: action.data}
+    default:
+      return state
+  }
 }
 
-export default routesIndex
+const rootReducer = combineReducers({
+  reg: registrationReducer
+})
+
+export default rootReducer
+

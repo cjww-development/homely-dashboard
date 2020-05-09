@@ -27,6 +27,19 @@ export const CTAButton = styled.button`
   width: 100%;
 `
 
+export const OtherButton = styled.button`
+  font-size: 4vw;
+  font-family: 'Roboto', serif;
+  color: #FFFFFF;
+  background-color: #CF2274;
+  border: 5px solid #FFFFFF;
+  border-radius: 30px;
+  padding: 15px;
+  width: 85%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+`
+
 export const ContentRow = styled.div`
   width: 100%;
   display: inline-flex;
@@ -88,4 +101,23 @@ export const ErrorAlert = styled.div`
   color: #FFFFFF;
   font-size: 4vw;
   font-family: Roboto, sans-serif;
+  margin-top: 5px;
+  margin-bottom: 5px;
+`
+
+export const HintAlert = styled.div`
+  width: 80%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 40px;
+  border: #008000 solid 2px;
+  background-color: #4CA64C;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 4vw;
+  font-family: Roboto, sans-serif;
+  margin-top: 5px;
+  margin-bottom: 5px;
 `

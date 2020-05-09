@@ -19,7 +19,8 @@ import Auth from '@aws-amplify/auth'
 export const registrationResults = {
   success: { success: true },
   passwordMismatch: { success: false, errorMsg: 'pages_welcome_signup_errors_pword_mismatch' },
-  userAlreadyExists: { success: false, errorMsg: 'pages_welcome_signup_errors_existing' }
+  userAlreadyExists: { success: false, errorMsg: 'pages_welcome_signup_errors_existing' },
+  verificationFailed: { success: false, errorMsg: 'pages_welcome_verify_errors_failed' }
 }
 
 export interface RegistrationResult {
@@ -56,11 +57,29 @@ export const registerUser: (regData: RegistrationData) => Promise<RegistrationRe
     return registrationResults.success
   } catch (e) {
     switch(e.code) {
-    case 'UsernameExistsException':
-      return registrationResults.userAlreadyExists
-    default:
-      return { success: false, errorMsg: e.code }
+      case 'UsernameExistsException':
+        return registrationResults.userAlreadyExists
+      default:
+        return { success: false, errorMsg: e.code }
     }
+  }
+}
+
+export const confirmUser: (email: string, code: string) => Promise<RegistrationResult> = async (email: string, code: string) => {
+  try {
+    await Auth.confirmSignUp(email, code)
+    return registrationResults.success
+  } catch (e) {
+    return registrationResults.verificationFailed
+  }
+}
+
+export const reissueVerificationCode: (email: string) => Promise<boolean> = async (email: string) => {
+  try {
+    await Auth.resendSignUp(email)
+    return true
+  } catch (e) {
+    return false
   }
 }
 

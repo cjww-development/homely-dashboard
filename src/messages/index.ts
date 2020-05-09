@@ -42,7 +42,16 @@ const Messages = () => {
           'pages_welcome_signup_fields_confirm_password': 'Confirm password',
           'pages_welcome_signup_confirm': 'Sign up',
           'pages_welcome_signup_errors_existing': 'An account already exists with this email',
-          'pages_welcome_signup_errors_pword_mismatch': 'The passwords you\'ve entered do not match'
+          'pages_welcome_signup_errors_pword_mismatch': 'The passwords you\'ve entered do not match',
+
+          'pages_welcome_verify_title': 'Just need to confirm it\'s you',
+          'pages_welcome_verify_content': 'Welcome home {{firstName}}, we\'ve sent a verification code to {{email}}. Please wait for the email and type the code in, below.' ,
+          'pages_welcome_verify_fields_code': 'Verification code',
+          'pages_welcome_verify_resend': 'Resend code',
+          'pages_welcome_verify_resend_error': 'There was a problem resending your code',
+          'pages_welcome_verify_resend_sent': 'We\'ve sent a new code',
+          'pages_welcome_verify_confirm': 'Confirm it\'s you',
+          'pages_welcome_verify_errors_failed': 'The verification code was incorrect',
         }
       }
     },

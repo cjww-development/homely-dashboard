@@ -19,11 +19,20 @@ import ReactDOM from 'react-dom'
 import './global.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
+import { Provider } from 'react-redux'
+import rootReducer from './reducers'
+import { applyMiddleware, createStore, compose } from 'redux'
+import thunk from 'redux-thunk'
+
+const composeFn = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const enhancer = composeFn(applyMiddleware(thunk))
+
+const store = createStore(rootReducer, enhancer)
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 )
 

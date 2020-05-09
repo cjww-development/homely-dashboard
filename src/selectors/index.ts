@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-const basePrefix = '/homely'
-
-const onboardingPrefix = '/welcome'
-
-const routesIndex = {
-  welcome: `${basePrefix}${onboardingPrefix}`,
-  homelyInfo: `${basePrefix}${onboardingPrefix}/what-is-homely`,
-  signUp: `${basePrefix}${onboardingPrefix}/sign-up`,
-  confirmAccount: `${basePrefix}${onboardingPrefix}/confirm-account`
+interface RegSelector {
+  reg: {
+    data: {
+      email: string
+      name: string
+    }
+  }
 }
 
-export default routesIndex
+export const registrationEmail = (state: RegSelector) => state.reg.data.email
+export const registrationName = (state: RegSelector) => state.reg.data.name
+

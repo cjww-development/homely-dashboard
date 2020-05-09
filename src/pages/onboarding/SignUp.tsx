@@ -15,12 +15,15 @@
  */
 
 import React, {ComponentProps, useState} from 'react'
+import {useDispatch} from 'react-redux'
 import styled from 'styled-components'
 import Logo from '../../assets/homely_logo_horizontal.png'
 import profile from '../../assets/onboarding/profile.svg'
 import {useTranslation} from 'react-i18next'
-import { CTAButton, Header, HomelyLogo, ErrorAlert } from '../../components'
-import { registerUser } from '../../services/RegistrationService'
+import {CTAButton, ErrorAlert, Header, HomelyLogo} from '../../components'
+import {registerUser} from '../../services/RegistrationService'
+import routesIndex from '../../routes'
+import {SET_VERIFICATION_INFO} from '../../actions'
 
 
 const Background = styled.div`
@@ -57,7 +60,9 @@ interface FormChange {
   target: { name: string, value: string }
 }
 
-const SignUp: React.FC = () => {
+const SignUp: React.FC = (props: ComponentProps<any>) => {
+  const dispatch = useDispatch()
+
   const [email, setEmail] = useState()
   const [firstName, setFirstName] = useState()
   const [lastName, setLastName] = useState()
@@ -72,11 +77,11 @@ const SignUp: React.FC = () => {
   const handleChange = (e: FormChange) => {
     const value = e.target.value
     switch (e.target.name) {
-    case 'firstName': setFirstName(value); break
-    case 'lastName': setLastName(value); break
-    case 'email': setEmail(value); break
-    case 'password': setPassword(value); break
-    case 'confirmPassword': setConfirmedPassword(value); break
+      case 'firstName': setFirstName(value); break
+      case 'lastName': setLastName(value); break
+      case 'email': setEmail(value); break
+      case 'password': setPassword(value); break
+      case 'confirmPassword': setConfirmedPassword(value); break
     }
   }
 
@@ -84,7 +89,8 @@ const SignUp: React.FC = () => {
     event.preventDefault()
     const registration = await registerUser({ email, firstName, lastName, password, confirmPassword })
     if(registration.success) {
-      console.log('Registration success redirecting to account confirmation')
+      dispatch({ type: SET_VERIFICATION_INFO, data: { email, name: firstName } })
+      props.history.push(routesIndex.confirmAccount)
     } else {
       setError(true)
       setErrorMsg(registration.errorMsg)

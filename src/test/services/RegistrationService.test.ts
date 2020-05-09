@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-import {registerUser, registrationResults} from '../../services/RegistrationService'
+import {confirmUser, registerUser, registrationResults, reissueVerificationCode} from '../../services/RegistrationService'
 import Auth from '@aws-amplify/auth'
-import {AuthError} from '@aws-amplify/auth/lib/Errors'
-import {AuthErrorTypes} from '@aws-amplify/auth/lib/types'
 
 describe('registerUser', () => {
   beforeEach(() => {
@@ -50,6 +48,32 @@ describe('registerUser', () => {
     const tmpRegData = { ...regData, confirmPassword: 'mismatch' }
 
     const result = await registerUser(tmpRegData)
+    expect(result).toEqual(expected)
+  })
+})
+
+describe('confirmUser', () => {
+  test('should activate the user', async () => {
+    const expected = registrationResults.success
+
+    Auth.confirmSignUp = jest.fn().mockImplementationOnce(() => {
+      return {}
+    })
+
+    const result = await confirmUser('test@email.com', '000000')
+    expect(result).toEqual(expected)
+  })
+})
+
+describe('reissueVerificationCode', () => {
+  test('should return true when the code has been resent', async () => {
+    const expected = true
+
+    Auth.resendSignUp = jest.fn().mockImplementationOnce(() => {
+      return {}
+    })
+
+    const result = await reissueVerificationCode('test@email.com')
     expect(result).toEqual(expected)
   })
 })
