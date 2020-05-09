@@ -18,10 +18,8 @@ import React, {ComponentProps} from 'react'
 import styled from 'styled-components'
 import Logo from '../../assets/homely_logo.png'
 import {useTranslation} from 'react-i18next'
-import {Localisation} from '../../messages'
 import routesIndex from '../../routes'
-
-Localisation()
+import { CTAButton } from '../../components'
 
 const Background = styled.div`
   background: #44188C;
@@ -58,17 +56,6 @@ const HomelyLogo = styled.div`
   align-items: center; 
 `
 
-const GetStarted = styled.button`
-  font-size: 4vw;
-  font-family: 'Roboto', serif;
-  color: #FFFFFF;
-  background-color: #562F97;
-  border: 5px solid #FFFFFF;
-  border-radius: 30px;
-  padding: 20px;
-  width: 100%;
-`
-
 const Welcome: React.FC = (props: ComponentProps<any>) => {
   const { t } = useTranslation()
 
@@ -85,7 +72,7 @@ const Welcome: React.FC = (props: ComponentProps<any>) => {
           <img src={Logo} height="100%" alt=""/>
         </HomelyLogo>
         <Punchline>{t('pages_welcome_punchline')}</Punchline>
-        <GetStarted onClick={next}>{t('pages_welcome_start')}</GetStarted>
+        <CTAButton onClick={next}>{t('pages_welcome_start')}</CTAButton>
       </CenterDiv>
     </Background>
   )

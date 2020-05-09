@@ -14,14 +14,6 @@
  * limitations under the License.
  */
 
-const basePrefix = '/homely'
-
-const onboardingPrefix = '/welcome'
-
-const routesIndex = {
-  welcome: `${basePrefix}${onboardingPrefix}`,
-  homelyInfo: `${basePrefix}${onboardingPrefix}/what-is-homely`,
-  signUp: `${basePrefix}${onboardingPrefix}/sign-up`
-}
-
-export default routesIndex
+export const USER_POOL_ID: string | undefined = process.env.REACT_APP_USER_POOL_ID
+export const USER_POOL_CLIENT_ID: string | undefined = process.env.REACT_APP_USER_POOL_CLIENT_ID
+export const AWS_REGION: string | undefined = process.env.REACT_APP_AWS_REGION

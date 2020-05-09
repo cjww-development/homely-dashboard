@@ -17,8 +17,11 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import Welcome from '../../../pages/onboarding/Welcome'
+import { Localisation } from '../../../messages'
 
-test('Render welcome page', () => {
+test('Render welcome page', async () => {
+  await Localisation()
+
   const { getByText } = render(<Welcome/>)
 
   const punchLine = getByText(/You're always home/i)

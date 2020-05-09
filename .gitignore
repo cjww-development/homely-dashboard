@@ -24,3 +24,7 @@ yarn-error.log*
 
 # Jetbrains
 .idea
+
+# Env
+.env
+.env.development

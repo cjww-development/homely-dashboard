@@ -17,8 +17,11 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import Info from '../../../pages/onboarding/Info'
+import { Localisation } from '../../../messages'
 
-test('Render info page', () => {
+test('Render info page', async () => {
+  await Localisation()
+
   const { getByText } = render(<Info/>)
 
   const titleOne = getByText(/Welcome to homely/i)

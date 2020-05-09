@@ -33,6 +33,16 @@ const Messages = () => {
           'pages_welcome_info_join': 'Ready to join Homely?',
           'pages_welcome_info_join_content': 'Has the thought of being able to control your home with Homely piqued your interest? Click the lets get started button below and we\'ll get you setup.',
           'pages_welcome_info_getStarted': 'Lets get started',
+
+          'pages_welcome_signup_title': 'Lets get you set up',
+          'pages_welcome_signup_fields_firstname': 'First name',
+          'pages_welcome_signup_fields_lastname': 'Last name',
+          'pages_welcome_signup_fields_email': 'Email',
+          'pages_welcome_signup_fields_password': 'Password',
+          'pages_welcome_signup_fields_confirm_password': 'Confirm password',
+          'pages_welcome_signup_confirm': 'Sign up',
+          'pages_welcome_signup_errors_existing': 'An account already exists with this email',
+          'pages_welcome_signup_errors_pword_mismatch': 'The passwords you\'ve entered do not match'
         }
       }
     },

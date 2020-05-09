@@ -14,14 +14,6 @@
  * limitations under the License.
  */
 
-const basePrefix = '/homely'
-
-const onboardingPrefix = '/welcome'
-
-const routesIndex = {
-  welcome: `${basePrefix}${onboardingPrefix}`,
-  homelyInfo: `${basePrefix}${onboardingPrefix}/what-is-homely`,
-  signUp: `${basePrefix}${onboardingPrefix}/sign-up`
+export interface Dictionary<T> {
+  [key: string]: T
 }
-
-export default routesIndex
