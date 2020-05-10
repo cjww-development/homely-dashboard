@@ -123,7 +123,7 @@ const ConfirmAccount: React.FC = (props: ComponentProps<any>) => {
           { inError ? <ErrorAlert>{t(errorMsg)}</ErrorAlert>: null }
           { resent ?  <HintAlert>{t('pages_welcome_verify_resend_sent')}</HintAlert> : null}
 
-          <InputField type="text" name="code" placeholder={t('pages_welcome_verify_fields_code')} value={verificationCode} onChange={handleChange}/>
+          <InputField pattern="[0-9]*" type="text" name="code" placeholder={t('pages_welcome_verify_fields_code')} value={verificationCode} onChange={handleChange}/>
 
           <OtherButton type="button" onClick={handleResend}>{t('pages_welcome_verify_resend')}</OtherButton>
           <CTAButton type="submit">{t('pages_welcome_verify_confirm')}</CTAButton>

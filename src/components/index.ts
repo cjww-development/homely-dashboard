@@ -31,7 +31,7 @@ export const OtherButton = styled.button`
   font-size: 4vw;
   font-family: 'Roboto', serif;
   color: #FFFFFF;
-  background-color: #CF2274;
+  background-color: #cf2274;
   border: 5px solid #FFFFFF;
   border-radius: 30px;
   padding: 15px;
