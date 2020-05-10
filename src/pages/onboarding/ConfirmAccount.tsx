@@ -72,9 +72,9 @@ const ConfirmAccount: React.FC = (props: ComponentProps<any>) => {
   const registeredEmail = useSelector(registrationEmail)
   const registeredName = useSelector(registrationName)
 
+  const { history } = props
 
   if(!registeredEmail) {
-    const { history } = props
     history.push(routesIndex.signUp)
   }
 
@@ -94,7 +94,7 @@ const ConfirmAccount: React.FC = (props: ComponentProps<any>) => {
     event.preventDefault()
     const result = await confirmUser(registeredEmail, verificationCode)
     if(result.success) {
-      console.log('Account confirmed!')
+      history.push(routesIndex.registrationSuccess)
     } else {
       setError(true)
       setErrorMsg(result.errorMsg)

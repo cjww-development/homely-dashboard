@@ -52,6 +52,10 @@ const Messages = () => {
           'pages_welcome_verify_resend_sent': 'We\'ve sent a new code',
           'pages_welcome_verify_confirm': 'Confirm it\'s you',
           'pages_welcome_verify_errors_failed': 'The verification code was incorrect',
+
+          'pages_welcome_registered_title': 'Welcome home',
+          'pages_welcome_registered_caption': 'Congratulations, you\'re now Home. Click below to sign in and setup your home.',
+          'pages_welcome_registered_confirm': 'Continue to sign in'
         }
       }
     },

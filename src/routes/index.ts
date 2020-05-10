@@ -22,7 +22,8 @@ const routesIndex = {
   welcome: `${basePrefix}${onboardingPrefix}`,
   homelyInfo: `${basePrefix}${onboardingPrefix}/what-is-homely`,
   signUp: `${basePrefix}${onboardingPrefix}/sign-up`,
-  confirmAccount: `${basePrefix}${onboardingPrefix}/confirm-account`
+  confirmAccount: `${basePrefix}${onboardingPrefix}/confirm-account`,
+  registrationSuccess: `${basePrefix}${onboardingPrefix}/registration-success`
 }
 
 export default routesIndex
