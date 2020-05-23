@@ -69,8 +69,8 @@ interface FormChange {
 
 const ConfirmAccount: React.FC = (props: ComponentProps<any>) => {
 
-  const registeredEmail = useSelector(registrationEmail)
-  const registeredName = useSelector(registrationName)
+  const registeredEmail: string = useSelector(registrationEmail)
+  const registeredName: string = useSelector(registrationName)
 
   const { history } = props
 

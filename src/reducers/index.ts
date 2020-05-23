@@ -17,9 +17,16 @@
 import {combineReducers} from 'redux'
 import {SET_VERIFICATION_INFO} from '../actions'
 
-const initialState = { data: { email: '', name: '' } }
+const regInitialState = { data: { email: '', name: '' } }
 
-export const registrationReducer = (state = initialState, action: { type: string, data: { email: string, name: string } }) => {
+interface ReducerAction<T> {
+  type: string
+  data: T
+}
+
+type RegistrationAction = ReducerAction<{ email: string, name: string }>
+
+export const registrationReducer = (state = regInitialState, action: RegistrationAction) => {
   switch (action.type) {
     case SET_VERIFICATION_INFO:
       return { ...state, data: action.data}

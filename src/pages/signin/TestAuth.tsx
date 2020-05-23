@@ -14,18 +14,28 @@
  * limitations under the License.
  */
 
-const basePrefix = '/homely'
+import React, {ComponentProps} from 'react'
+import styled from 'styled-components'
+import Logo from '../../assets/homely_logo_horizontal.png'
+import {Header, HomelyLogo} from '../../components'
 
-const onboardingPrefix = '/welcome'
+const Background = styled.div`
+  background: #FFFFFF;
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0;
+`
 
-const routesIndex = {
-  welcome: `${basePrefix}${onboardingPrefix}`,
-  homelyInfo: `${basePrefix}${onboardingPrefix}/what-is-homely`,
-  signUp: `${basePrefix}${onboardingPrefix}/sign-up`,
-  confirmAccount: `${basePrefix}${onboardingPrefix}/confirm-account`,
-  registrationSuccess: `${basePrefix}${onboardingPrefix}/registration-success`,
-  signIn: `${basePrefix}/sign-in`,
-  testAuth: `${basePrefix}/test`,
+const TestAuth: React.FC = (props: ComponentProps<any>) => {
+  return (
+    <Background>
+      <Header>
+        <HomelyLogo src={Logo} height="60px" alt=""/>
+      </Header>
+      <p>You're signed in!</p>
+    </Background>
+  )
 }
 
-export default routesIndex
+export default TestAuth

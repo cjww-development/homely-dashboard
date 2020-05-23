@@ -55,7 +55,11 @@ const Messages = () => {
 
           'pages_welcome_registered_title': 'Welcome home',
           'pages_welcome_registered_caption': 'Congratulations, you\'re now Home. Click below to sign in and setup your home.',
-          'pages_welcome_registered_confirm': 'Continue to sign in'
+          'pages_welcome_registered_confirm': 'Continue to sign in',
+
+          'pages_signin_title': 'Welcome home',
+          'pages_signin_confirm': 'Sign in',
+          'pages_signin_error': 'Incorrect username or password'
         }
       }
     },

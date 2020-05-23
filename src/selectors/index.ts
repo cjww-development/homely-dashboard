@@ -23,6 +23,5 @@ interface RegSelector {
   }
 }
 
-export const registrationEmail = (state: RegSelector) => state.reg.data.email
-export const registrationName = (state: RegSelector) => state.reg.data.name
-
+export const registrationEmail: (state: RegSelector) => string = (state: RegSelector) => state.reg.data.email
+export const registrationName: (state: RegSelector) => string = (state: RegSelector) => state.reg.data.name

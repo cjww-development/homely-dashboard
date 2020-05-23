@@ -14,18 +14,23 @@
  * limitations under the License.
  */
 
-const basePrefix = '/homely'
+import React, {ComponentProps} from 'react'
+import {Redirect, Route} from 'react-router-dom'
+import { getCurrentSession } from '../../services/AuthService'
+import { CognitoUserSession } from 'amazon-cognito-identity-js'
+import routesIndex from '../../routes'
 
-const onboardingPrefix = '/welcome'
+const AuthRoute = (props: ComponentProps<any>) => {
+  const { redirect } = props
+  const userSession: CognitoUserSession = getCurrentSession()
 
-const routesIndex = {
-  welcome: `${basePrefix}${onboardingPrefix}`,
-  homelyInfo: `${basePrefix}${onboardingPrefix}/what-is-homely`,
-  signUp: `${basePrefix}${onboardingPrefix}/sign-up`,
-  confirmAccount: `${basePrefix}${onboardingPrefix}/confirm-account`,
-  registrationSuccess: `${basePrefix}${onboardingPrefix}/registration-success`,
-  signIn: `${basePrefix}/sign-in`,
-  testAuth: `${basePrefix}/test`,
+  return userSession.isValid() ?
+    <Route { ...props } /> :
+    <Redirect to={redirect} />
 }
 
-export default routesIndex
+AuthRoute.defaultProps = {
+  redirect: routesIndex.signIn
+}
+
+export default AuthRoute

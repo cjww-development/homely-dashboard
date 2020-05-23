@@ -14,6 +14,4 @@
  * limitations under the License.
  */
 
-export const SET_REG_EMAIL = 'SET_REG_EMAIL'
-export const SET_REG_NAME = 'SET_REG_NAME'
 export const SET_VERIFICATION_INFO = 'SET_VERIFICATION_INFO'

@@ -17,3 +17,8 @@
 export const USER_POOL_ID: string | undefined = process.env.REACT_APP_USER_POOL_ID
 export const USER_POOL_CLIENT_ID: string | undefined = process.env.REACT_APP_USER_POOL_CLIENT_ID
 export const AWS_REGION: string | undefined = process.env.REACT_APP_AWS_REGION
+
+export const getSessionPrefix: () => string = () => {
+  const lastAuthUser: string | null = localStorage.getItem(`CognitoIdentityServiceProvider.${USER_POOL_CLIENT_ID}.LastAuthUser`)
+  return `CognitoIdentityServiceProvider.${USER_POOL_CLIENT_ID}.${lastAuthUser}`
+}
